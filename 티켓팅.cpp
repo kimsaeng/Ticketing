@@ -179,15 +179,15 @@ int main(void) {
 			printf("%s\t", TICKETTIME2);
 		}
 		
-		if(manAge[i] < 3) {
+		if(manAge[index] < 3) {
 			printf("%s\t", MANAGE1);
-		} else if(manAge[i] >= 3 && manAge[i] < 12) {
+		} else if(manAge[index] >= 3 && manAge[index] < 12) {
 			printf("%s\t", MANAGE2);
-		} else if(manAge[i] >= 12 && manAge[i] < 18) {
+		} else if(manAge[index] >= 12 && manAge[index] < 18) {
 			printf("%s\t", MANAGE3);
-		} else if(manAge[i] >= 18 && manAge[i] < 65) {
+		} else if(manAge[index] >= 18 && manAge[index] < 65) {
 			printf("%s\t", MANAGE4);
-		} else if(manAge[i] >= 65) {
+		} else if(manAge[index] >= 65) {
 			printf("%s\t", MANAGE5);
 		}
 
