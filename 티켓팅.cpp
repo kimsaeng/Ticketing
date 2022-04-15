@@ -211,7 +211,7 @@ int main(void) {
 	printf("====================================================\n");
 	printf("\n");
 
-	printf("To Continue or Not(1.New Order, 2.Exit)\n");
+	printf("To continue or not(1.New Order, 2.Exit)\n");
 	scanf("%d", &NewOrExit);
 	if(NewOrExit == 1) {
 		continue;
