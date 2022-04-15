@@ -51,7 +51,7 @@ int main(void) {
 	int NewOrExit;
 	
 	while(true) {
-	for(int index = 0; index < 10; index++) { // the max number of repitition is 10 
+	for(int index = 0; index < 10; index++) { // the max number of repetition is 10 
 	printf("Select Type of Tickets\n1.All\n2.Park\n");
 	scanf("%d", &ticketType[i]);
 	
