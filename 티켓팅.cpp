@@ -47,7 +47,9 @@ int main(void) {
 	const char* MANAGE3 = "Youth";
 	const char* MANAGE4 = "Adult";
 	const char* MANAGE5 = "Senior";
-
+	int NewOrExit;
+	
+	while(true) {
 	for(int index = 0; index < 10; index++) { // the max number of repition is 10 
 	printf("Select Type of Tickets\n1.All\n2.Park\n");
 	scanf("%d", &ticketType[i]);
@@ -214,5 +216,16 @@ int main(void) {
 		}	
 	}
 	printf("The total price is %d \n",sumPrice);
-	printf("====================================================\n");	
+	printf("====================================================\n");
+	printf("\n");
+
+	printf("Continue or not(1.New Order, 2.Exit)\n");
+	scanf("%d", &NewOrExit);
+	if(NewOrExit == 1) {
+		continue;
+	}
+	if(NewOrExit == 2) {
+		break;
+	}
+	}		
 }
