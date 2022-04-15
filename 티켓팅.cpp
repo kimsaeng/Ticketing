@@ -149,6 +149,7 @@ int main(void) {
 	} else if (ticketType[i] == 1 && specialOffer[i] == 6) {
 		ticketPrice[i]*=0.3;
 	}
+		
 	sumPrice += ticketPrice[i]*ticketNum;
 	printf("The ticket price is : %d\n", ticketPrice[i]*ticketNum);
 	printf("Thank you");
