@@ -155,7 +155,7 @@ int main(void) {
 		break;
 	}
 	printf("\n\n");
-	} while(repCount < 10); //this line could be modified later
+	} while(repCount <= 10); //do while loop ends
 	
 	printf("Stop ticketing. Thank you\n");
 	printf("===================== LOTTE WORLD =====================\n");	
