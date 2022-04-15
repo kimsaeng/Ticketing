@@ -169,14 +169,12 @@ int main(void) {
 	for(index = 0; index < i; index++) {
 		if(ticketType[index] == 1) {
 			printf("%s\t", TICKETTYPE1);	
-		}
-		if(ticketType[index] == 2) {
+		} else if(ticketType[index] == 2) {
 			printf("%s\t", TICKETTYPE2);	
 		}
 		if(ticketTime[index] == 1) {
 			printf("%s\t", TICKETTIME1);
-		}
-		if(ticketTime[index] == 2) {
+		} else if(ticketTime[index] == 2) {
 			printf("%s\t", TICKETTIME2);
 		}
 		
