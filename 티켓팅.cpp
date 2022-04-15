@@ -32,7 +32,7 @@ int main(void) {
 	int sumPrice;
 	int continueOrNot;
 	int ticket[10];
-	int index;
+	int index = 0;
 	const char* TICKETTYPE1 = "All";
 	const char* TICKETTYPE2 = "Park";
 	const char* TICKETTIME1 = "1Day";
