@@ -107,7 +107,6 @@ int main(void) {
 	} else if (ticketType[i] == 1 && ticketTime[i] == 2 && manAge[i] >= 65) {
 		ticketPrice[i] = ALLCHILDAFTER4;
 		 
-	
 	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 3 && manAge[i] < 12) {
 		ticketPrice[i] = PARKCHILD1DAY;
 	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 12 && manAge[i] < 18) {
@@ -117,7 +116,6 @@ int main(void) {
 	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 65) {
 		ticketPrice[i] = PARKCHILD1DAY;
 		
-
 	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 3 && manAge[i] < 12) {
 		ticketPrice[i] = PARKCHILDAFTER4;
 	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 12 && manAge[i] < 18) {
