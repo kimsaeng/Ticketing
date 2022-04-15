@@ -215,8 +215,7 @@ int main(void) {
 	scanf("%d", &NewOrExit);
 	if(NewOrExit == 1) {
 		continue;
-	}
-	if(NewOrExit == 2) {
+	} else if(NewOrExit == 2) {
 		break;
 	}
 	}		
