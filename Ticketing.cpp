@@ -203,6 +203,7 @@ int main(void) {
 		totalPrice += ticketInfo[index][ticketPriceIndex];
 	}
 	printf("The total price is %d\n",totalPrice);
+		totalPrice = 0;
 	printf("=======================================================\n");
 	printf("\n");
 
