@@ -195,20 +195,15 @@ int main(void) {
 		
 		if(specialOffer[index] == 1) {
 			printf("%s\n", SPECIALOFFER1);
-		}
-		if(specialOffer[index] == 2) {
+		} else if(specialOffer[index] == 2) {
 			printf("%s\n", SPECIALOFFER2);
-		}
-		if(specialOffer[index] == 3) {
+		} else if(specialOffer[index] == 3) {
 			printf("%s\n", SPECIALOFFER3);
-		}
-		if(specialOffer[index] == 4) {
+		} else if(specialOffer[index] == 4) {
 			printf("%s\n", SPECIALOFFER4);
-		}
-		if(specialOffer[index] == 5) {
+		} else if(specialOffer[index] == 5) {
 			printf("%s\n", SPECIALOFFER5);
-		}
-		if(specialOffer[index] == 6) {
+		} else if(specialOffer[index] == 6) {
 			printf("%s\n", SPECIALOFFER6);
 		}	
 	}
