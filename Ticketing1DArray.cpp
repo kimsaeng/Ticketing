@@ -1,6 +1,5 @@
 #include <stdio.h>
-// 2차원 배열로 수정예정
-// 동반 1인 할인은 중복 적용이 가능한가? (고려되지 않음) 
+// 동반 1인 할인은 적용안함
 int main(void) {
 	int ticketType[10];
 	int ticketTime[10];
