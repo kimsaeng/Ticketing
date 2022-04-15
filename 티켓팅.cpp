@@ -131,12 +131,12 @@ int main(void) {
 	
 	//Special Offer
 	printf("Special Offer\n1.None\n2.Disabled\n3.Veteran\n4.Military\n5.Pregnant\n6.Multiple\n");
-	scanf("%d", &specialOffer[i]);	
+	scanf("%d", &specialOffer[i]);
+		
 	if(manAge[i] >= 65) {
 		specialOffer[i] = 1;
 	}
 	if(specialOffer[i] == 1) {
-	
 		ticketPrice[i];
 	} else if(specialOffer[i] == 2) {
 		ticketPrice[i]*=0.5; 
