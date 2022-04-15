@@ -1,15 +1,23 @@
 #include <stdio.h>
-// 동반 1인 할인은 적용안함
+//const int naming will be updated
 int main(void) {
-	int ticketType[10];
-	int ticketTime[10];
-	int idNum[13];
-	int i;	//i means index
+	int ticketType = 0;
+	int ticketTime = 0;
+	int repCount = 0;
+	int index;
+	int NewOrExit;
 	int ageYear;
 	int birthDay;
-	int manAge[10];
+	int manAge;
+	int idNum[13];
+	int ticketPrice = 0;
+	int ticketNum = 1; // fixed
+	int ridesOrNot;
+	int specialOffer = 0;
+	int totalPrice = 0;
+	int continueOrNot;
 	const int THISYEAR = 2022;
-	const int TODAY = 414;
+	const int TODAY = 416;
 	const int ALLADULT1DAY = 62000;
 	const int ALLYOUTH1DAY = 54000;
 	const int ALLCHILD1DAY = 47000;	
@@ -24,41 +32,22 @@ int main(void) {
 	const int PARKCHILDAFTER4 = 35000;	
 	const int BABY = 15000;
 	const int FREEOFCHARGE = 0;	
-	int ticketPrice[10];
-	int ticketNum = 1; // fixed
-	int ridesOrNot;
-	int specialOffer[10];
-	int sumPrice;
-	int continueOrNot;
-	int ticket[10];
-	int index = 0;
-	const char* TICKETTYPE1 = "All";
-	const char* TICKETTYPE2 = "Park";
-	const char* TICKETTIME1 = "1Day";
-	const char* TICKETTIME2 = "After4";
-	const char* SPECIALOFFER1 = "None";
-	const char* SPECIALOFFER2 = "Disabled";
-	const char* SPECIALOFFER3 = "Veteran";
-	const char* SPECIALOFFER4 = "Military";
-	const char* SPECIALOFFER5 = "Pregnant";
-	const char* SPECIALOFFER6 = "Multiple";
-	const char* MANAGE1 = "Baby";
-	const char* MANAGE2 = "Child";
-	const char* MANAGE3 = "Youth";
-	const char* MANAGE4 = "Adult";
-	const char* MANAGE5 = "Senior";
-	int NewOrExit;
-	
+	//2D Array
+	int ticketInfo[10][5] = {0};
+	const int ticketTypeIndex = 0;
+	const int ticketTimeIndex = 1;
+	const int manAgeIndex = 2;
+	const int ticketPriceIndex = 3;
+	const int specialOfferIndex = 4;
+
 	while(true) {
-	for(int index = 0; index < 10; index++) { // the max number of repetition is 10 
+	do {	 
 	printf("Select Type of Tickets\n1.All\n2.Park\n");
-	scanf("%d", &ticketType[i]);
-	
+	scanf("%d", &ticketType);
 	printf("Select Time of Tickets\n1.Day\n2.After4\n");
-	scanf("%d", &ticketTime[i]);
-	
+	scanf("%d", &ticketTime);
 	printf("Input your social security number\n"); 
-	for(int index = 0; index < 13; index++) {
+	for(index = 0; index < 13; index++) {
 		scanf("%1d", &idNum[index]);
 	}
 	//manAge calculation
@@ -71,89 +60,92 @@ int main(void) {
 	}
 	
 	birthDay = idNum[2]*1000+idNum[3]*100+idNum[4]*10+idNum[5];
-	manAge[i] = THISYEAR - ageYear;
+	manAge = THISYEAR - ageYear;
 	if(birthDay >= TODAY) {
-		manAge[i];
+		manAge;
 	} else {
-		manAge[i] -= 1;
+		manAge -= 1;
 	}
 	// price setting
-	if(manAge[i] < 1) {
-		ticketPrice[i] = FREEOFCHARGE;	
-	} else if (manAge[i] >= 1  && manAge[i] < 3) {
+	if(manAge < 1) {
+		ticketPrice = FREEOFCHARGE;	
+	} else if (manAge >= 1  && manAge < 3) {
 		printf("baby rides? 1.yes 2.no\n");
 		scanf("%d", &ridesOrNot);
 		if(ridesOrNot == 1) {
-			ticketPrice[i] = BABY;
+			ticketPrice = BABY;
 		} else if(ridesOrNot == 2) {
-			ticketPrice[i] = FREEOFCHARGE;
+			ticketPrice = FREEOFCHARGE;
 		}
-	} else if (ticketType[i] == 1 && ticketTime[i] == 1 && manAge[i] >= 3 && manAge[i] < 12) {
-		ticketPrice[i] = ALLCHILD1DAY;	
-	} else if (ticketType[i] == 1 && ticketTime[i] == 1 && manAge[i] >= 12 && manAge[i] < 18) {
-		ticketPrice[i] = ALLYOUTH1DAY;
-	} else if (ticketType[i] == 1 && ticketTime[i] == 1 && manAge[i] >= 18 && manAge[i] < 65) {
-		ticketPrice[i] = ALLADULT1DAY;
-	} else if (ticketType[i] == 1 && ticketTime[i] == 1 && manAge[i] >= 65) {
-		ticketPrice[i] = ALLCHILD1DAY;
-		
-	} else if (ticketType[i] == 1 && ticketTime[i] == 2 && manAge[i] >= 3 && manAge[i] < 12) {
-		ticketPrice[i] = ALLCHILDAFTER4;
-	} else if (ticketType[i] == 1 && ticketTime[i] == 2 && manAge[i] >= 12 && manAge[i] < 18) {
-		ticketPrice[i] = ALLYOUTHAFTER4;
-	} else if (ticketType[i] == 1 && ticketTime[i] == 2 && manAge[i] >= 18 && manAge[i] < 65) {
-		ticketPrice[i] = ALLADULTAFTER4;
-	} else if (ticketType[i] == 1 && ticketTime[i] == 2 && manAge[i] >= 65) {
-		ticketPrice[i] = ALLCHILDAFTER4;
+	} else if (ticketType == 1 && ticketTime == 1 && manAge >= 3 && manAge < 12) {
+		ticketPrice = ALLCHILD1DAY;	
+	} else if (ticketType == 1 && ticketTime == 1 && manAge >= 12 && manAge < 18) {
+		ticketPrice = ALLYOUTH1DAY;
+	} else if (ticketType == 1 && ticketTime == 1 && manAge >= 18 && manAge < 65) {
+		ticketPrice = ALLADULT1DAY;
+	} else if (ticketType == 1 && ticketTime == 1 && manAge >= 65) {
+		ticketPrice = ALLCHILD1DAY;
+	
+	} else if (ticketType == 1 && ticketTime == 2 && manAge >= 3 && manAge < 12) {
+		ticketPrice = ALLCHILDAFTER4;
+	} else if (ticketType == 1 && ticketTime == 2 && manAge >= 12 && manAge < 18) {
+		ticketPrice = ALLYOUTHAFTER4;
+	} else if (ticketType == 1 && ticketTime == 2 && manAge >= 18 && manAge < 65) {
+		ticketPrice = ALLADULTAFTER4;
+	} else if (ticketType == 1 && ticketTime == 2 && manAge >= 65) {
+		ticketPrice = ALLCHILDAFTER4;
 		 
-	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 3 && manAge[i] < 12) {
-		ticketPrice[i] = PARKCHILD1DAY;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 12 && manAge[i] < 18) {
-		ticketPrice[i] = PARKYOUTH1DAY;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 18 && manAge[i] < 65) {
-		ticketPrice[i] = PARKADULT1DAY;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 1 && manAge[i] >= 65) {
-		ticketPrice[i] = PARKCHILD1DAY;
+	} else if (ticketType == 2 && ticketTime == 1 && manAge >= 3 && manAge < 12) {
+		ticketPrice = PARKCHILD1DAY;
+	} else if (ticketType == 2 && ticketTime == 1 && manAge >= 12 && manAge < 18) {
+		ticketPrice = PARKYOUTH1DAY;
+	} else if (ticketType == 2 && ticketTime == 1 && manAge >= 18 && manAge < 65) {
+		ticketPrice = PARKADULT1DAY;
+	} else if (ticketType == 2 && ticketTime == 1 && manAge >= 65) {
+		ticketPrice = PARKCHILD1DAY;
 		
-	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 3 && manAge[i] < 12) {
-		ticketPrice[i] = PARKCHILDAFTER4;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 12 && manAge[i] < 18) {
-		ticketPrice[i] = PARKYOUTHAFTER4;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 18 && manAge[i] < 65) {
-		ticketPrice[i] = PARKADULTAFTER4;
-	} else if (ticketType[i] == 2 && ticketTime[i] == 2 && manAge[i] >= 65) {
-		ticketPrice[i] = PARKCHILDAFTER4;
+	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 3 && manAge < 12) {
+		ticketPrice = PARKCHILDAFTER4;
+	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 12 && manAge < 18) {
+		ticketPrice = PARKYOUTHAFTER4;
+	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 18 && manAge < 65) {
+		ticketPrice = PARKADULTAFTER4;
+	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 65) {
+		ticketPrice = PARKCHILDAFTER4;
 	}
 	//the number of Tickets(fixed)
 	printf("How many tickets? (max 10)\n");
 	printf("1\n");
-	
 	//Special Offer
 	printf("Special Offer\n1.None\n2.Disabled\n3.Veteran\n4.Military\n5.Pregnant\n6.Multiple\n");
-	scanf("%d", &specialOffer[i]);
-		
-	if(manAge[i] >= 65) {
-		specialOffer[i] = 1;
-	}
-	if(specialOffer[i] == 1) {
-		ticketPrice[i];
-	} else if(specialOffer[i] == 2) {
-		ticketPrice[i]*=0.5; 
-	} else if (specialOffer[i] == 3) {
-		ticketPrice[i]*=0.5; 
-	} else if (ticketType[i] == 1 && specialOffer[i] == 4) {
-		ticketPrice[i]*=0.49; 
-	} else if (ticketType[i] == 1 && specialOffer[i] == 5) {
-		ticketPrice[i]*=0.5; 
-	} else if (ticketType[i] == 1 && specialOffer[i] == 6) {
-		ticketPrice[i]*=0.3;
-	}
-		
-	sumPrice += ticketPrice[i]*ticketNum;
-	printf("The ticket price is : %d\n", ticketPrice[i]*ticketNum);
-	printf("Thank you");
+	scanf("%d", &specialOffer);
 	
-	i++;
+	if(manAge >= 65) {
+		specialOffer = 1;
+	}
+	if(specialOffer == 1) {
+		ticketPrice;
+	} else if(specialOffer == 2) {
+		ticketPrice*=0.5; 
+	} else if (specialOffer == 3) {
+		ticketPrice*=0.5; 
+	} else if (ticketType == 1 && specialOffer == 4) {
+		ticketPrice*=0.49; 
+	} else if (ticketType == 1 && specialOffer == 5) {
+		ticketPrice*=0.5; 
+	} else if (ticketType == 1 && specialOffer == 6) {
+		ticketPrice*=0.3;
+	}
+	printf("The ticket price is : %d\n", ticketPrice);
+	printf("Thank you\n");
+	//2D array 
+	ticketInfo[repCount][ticketTypeIndex] = ticketType;
+	ticketInfo[repCount][ticketTimeIndex] = ticketTime;
+	ticketInfo[repCount][manAgeIndex] = manAge;
+	ticketInfo[repCount][ticketPriceIndex] = ticketPrice;
+	ticketInfo[repCount][specialOfferIndex] = specialOffer;	
+		
+	repCount++;
 	
 	printf("Continue to buy or not?\n1.More tickets\n2.Terminate\n");
 	scanf("%d", &continueOrNot);
@@ -163,52 +155,55 @@ int main(void) {
 		break;
 	}
 	printf("\n\n");
-	} // for statement ends. 
+	} while(repCount < 10); //do while loop ends
+	
 	printf("Stop ticketing. Thank you\n");
-	printf("===================== LOTTE WORLD =====================\n");
-	for(index = 0; index < i; index++) {
-		if(ticketType[index] == 1) {
-			printf("%s\t", TICKETTYPE1);	
-		} else if(ticketType[index] == 2) {
-			printf("%s\t", TICKETTYPE2);	
+	printf("===================== LOTTE WORLD =====================\n");	
+	for(index = 0; index < repCount; index++) {	
+		if(ticketInfo[index][ticketTypeIndex] == 1) {
+			printf("All\t");	
+		} else if(ticketInfo[index][ticketTypeIndex] == 2) {
+			printf("Park\t");	
 		}
-		if(ticketTime[index] == 1) {
-			printf("%s\t", TICKETTIME1);
-		} else if(ticketTime[index] == 2) {
-			printf("%s\t", TICKETTIME2);
+		if(	ticketInfo[index][ticketTimeIndex] == 1) {
+			printf("1Day\t");
+		} else if(	ticketInfo[index][ticketTimeIndex] == 2) {
+			printf("After4\t");
 		}
 		
-		if(manAge[index] < 3) {
-			printf("%s\t", MANAGE1);
-		} else if(manAge[index] >= 3 && manAge[index] < 12) {
-			printf("%s\t", MANAGE2);
-		} else if(manAge[index] >= 12 && manAge[index] < 18) {
-			printf("%s\t", MANAGE3);
-		} else if(manAge[index] >= 18 && manAge[index] < 65) {
-			printf("%s\t", MANAGE4);
-		} else if(manAge[index] >= 65) {
-			printf("%s\t", MANAGE5);
+		if(ticketInfo[index][manAgeIndex] < 3) {
+			printf("Baby\t");
+		} else if(ticketInfo[index][manAgeIndex] >= 3 && ticketInfo[index][manAgeIndex] < 12) {
+			printf("Child\t");
+		} else if(ticketInfo[index][manAgeIndex] >= 12 && ticketInfo[index][manAgeIndex] < 18) {
+			printf("Youth\t");
+		} else if(ticketInfo[index][manAgeIndex] >= 18 && ticketInfo[index][manAgeIndex] < 65) {
+			printf("Adult\t");
+		} else if(ticketInfo[index][manAgeIndex] >= 65) {
+			printf("Senior\t");
 		}
-
+		
 		printf(" X\t%d\t", ticketNum);
-		printf("%d\t",ticketPrice[index]);
+		printf("%d\t",ticketInfo[index][ticketPriceIndex]);
 		
-		if(specialOffer[index] == 1) {
-			printf("%s\n", SPECIALOFFER1);
-		} else if(specialOffer[index] == 2) {
-			printf("%s\n", SPECIALOFFER2);
-		} else if(specialOffer[index] == 3) {
-			printf("%s\n", SPECIALOFFER3);
-		} else if(specialOffer[index] == 4) {
-			printf("%s\n", SPECIALOFFER4);
-		} else if(specialOffer[index] == 5) {
-			printf("%s\n", SPECIALOFFER5);
-		} else if(specialOffer[index] == 6) {
-			printf("%s\n", SPECIALOFFER6);
-		}	
+		if(ticketInfo[index][specialOfferIndex] == 1) {
+			printf("None\n");
+		} else if(ticketInfo[index][specialOfferIndex] == 2) {
+			printf("Disabled\n");
+		} else if(ticketInfo[index][specialOfferIndex] == 3) {
+			printf("Veteran\n");
+		} else if(ticketInfo[index][specialOfferIndex] == 4) {
+			printf("Military\n");
+		} else if(ticketInfo[index][specialOfferIndex] == 5) {
+			printf("Pregnant\n");
+		} else if(ticketInfo[index][specialOfferIndex] == 6) {
+			printf("Multiple\n");
+		}		
+		
+		totalPrice += ticketInfo[index][ticketPriceIndex];
 	}
-	printf("The total price is %d \n",sumPrice);
-	printf("====================================================\n");
+	printf("The total price is %d\n",totalPrice);
+	printf("=======================================================\n");
 	printf("\n");
 
 	printf("To continue or not(1.New Order, 2.Exit)\n");
@@ -218,5 +213,5 @@ int main(void) {
 	} else if(NewOrExit == 2) {
 		break;
 	}
-	}		
+	}
 }
