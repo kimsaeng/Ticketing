@@ -172,7 +172,6 @@ int main(void) {
 		if(ticketType[index] == 2) {
 			printf("%s\t", TICKETTYPE2);	
 		}
-		
 		if(ticketTime[index] == 1) {
 			printf("%s\t", TICKETTIME1);
 		}
