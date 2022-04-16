@@ -1,17 +1,16 @@
 #include <stdio.h>
-//변수 초기화 수정예정
+
 int main(void) {
 	int ticketType = 0, ticketTime = 0, manAge = 0, qty = 1, price = 0, specialOffer = 0, totalPrice = 0;
-	int idNum[13];
+	int index = 0, repCount = 0, NewOrExit = 0, continueOrNot = 0, ridesOrNot = 0;
 	int ageYear = 0, birthDay = 0;
-	int repCount = 0, index = 0;
-	int NewOrExit = 0, continueOrNot = 0, ridesOrNot = 0;
 	const int THIS_YEAR = 2022, TODAY = 416;
 	const int ALL_ADULT_1DAY = 62000, ALL_YOUTH_1DAY = 54000, ALL_CHILD_1DAY = 47000, ALL_ADULT_AFTER4 = 50000, ALL_YOUTH_AFTER4 = 43000, ALL_CHILD_AFTER4 = 36000,	
 			  PARK_ADULT_1DAY = 59000, PARK_YOUTH_1DAY = 52000, PARK_CHILD_1DAY = 46000, PARK_ADULT_AFTER4 = 47000, PARK_YOUTH_AFTER4 = 41000, PARK_CHILD_AFTER4 = 35000,
 			  BABY = 15000, FREE_OF_CHARGE = 0;
 	const float DISABLED_DC_RATE = 0.5f, VETERAN_DC_RATE = 0.5f, MILITARY_DC_RATE = 0.51f, PREGNANT_DC_RATE = 0.5f, MULTICHILD_DC_RATE = 0.7f;
 	const int TICKET_TYPE_INDEX = 0, TICKET_TIME_INDEX = 1, MANAGE_INDEX = 2, PRICE_INDEX = 3, SPCIAL_OFFER_INDEX = 4;
+	int idNum[13];
 	int ticketInfo[10][5] = {0};
 
 	while(true) {
@@ -87,7 +86,7 @@ int main(void) {
 	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 65) {
 		price = PARK_CHILD_AFTER4;
 	}
-	//the number of Tickets(fixed)
+	//Tickets qty(fixed)
 	printf("How many tickets? (max 10)\n");
 	printf("1\n");
 	//Special Offer
