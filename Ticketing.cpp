@@ -1,5 +1,5 @@
 #include <stdio.h>
-// 변수 여러개 선언 수정예정
+// 변수 초기화 수정예정
 int main(void) {
 	int ticketType = 0;
 	int ticketTime = 0;
