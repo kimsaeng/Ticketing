@@ -87,7 +87,7 @@ int main(void) {
 	} else if (ticketType == 2 && ticketTime == 2 && manAge >= 65) {
 		price = PARK_CHILD_AFTER4;
 	}
-	//Tickets qty(fixed)
+	//Tickets QTY(fixed)
 	printf("How many tickets? (max 10)\n");
 	printf("1\n");
 	//Special Offer
