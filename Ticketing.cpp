@@ -34,9 +34,9 @@ int main(void) {
 	const int FREE_OF_CHARGE = 0;
 	const float DISABLED_DC_RATE = 0.5;
 	const float VETERAN_DC_RATE = 0.5;
-	const float MILITARY_DC_RATE = 0.49;
+	const float MILITARY_DC_RATE = 0.51;
 	const float PREGNANT_DC_RATE = 0.5;
-	const float MULTICHILD_DC_RATE = 0.3;
+	const float MULTICHILD_DC_RATE = 0.7;
 	//2D Array
 	int ticketInfo[10][5] = {0};
 	const int TICKET_TYPE_INDEX = 0;
