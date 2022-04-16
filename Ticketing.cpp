@@ -131,7 +131,7 @@ int main(void) {
 	if(specialOffer == 1) {
 		price;
 	} else if(specialOffer == 2) {
-		price = (int)(price * DISABLED_DC_RATE);      // if DC_RATE is changed, it might need to round up price 
+		price = (int)(price * DISABLED_DC_RATE);      // if DC_RATE is changed, price might need to be round-up
 	} else if (specialOffer == 3) {
 		price = (int)(price * VETERAN_DC_RATE);
 	} else if (ticketType == 1 && specialOffer == 4) {
