@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-	int ticketType = 0, ticketTime = 0, manAge = 0, qty = 1, price = 0, specialOffer = 0, totalPrice = 0;
-	int index = 0, repCount = 0, NewOrExit = 0, continueOrNot = 0, ridesOrNot = 0;
-	int ageYear = 0, birthDay = 0;
+	int ticketType, ticketTime, manAge, price, specialOffer, totalPrice = 0;
+	int index, repCount, NewOrExit, continueOrNot, ridesOrNot = 0;
+	int ageYear, birthDay = 0;
+	const int QTY = 1;
 	const int THIS_YEAR = 2022, TODAY = 416;
 	const int ALL_ADULT_1DAY = 62000, ALL_YOUTH_1DAY = 54000, ALL_CHILD_1DAY = 47000, ALL_ADULT_AFTER4 = 50000, ALL_YOUTH_AFTER4 = 43000, ALL_CHILD_AFTER4 = 36000,	
 		  PARK_ADULT_1DAY = 59000, PARK_YOUTH_1DAY = 52000, PARK_CHILD_1DAY = 46000, PARK_ADULT_AFTER4 = 47000, PARK_YOUTH_AFTER4 = 41000, PARK_CHILD_AFTER4 = 35000,
@@ -156,7 +157,7 @@ int main(void) {
 			printf("Senior\t");
 		}
 		
-		printf(" X\t%d\t", qty);
+		printf(" X\t%d\t", QTY);
 		printf("%d\t",ticketInfo[index][PRICE_INDEX]);
 		
 		if(ticketInfo[index][SPCIAL_OFFER_INDEX] == 1) {
