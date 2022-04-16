@@ -170,7 +170,7 @@ int main(void) {
 		} else if(ticketInfo[index][TICKET_TYPE_INDEX] 	== 2) {
 			printf("Park\t");	
 		}
-		if(	ticketInfo[index][TICKET_TIME_INDEX] == 1) {
+		if(ticketInfo[index][TICKET_TIME_INDEX] == 1) {
 			printf("1Day\t");
 		} else if(ticketInfo[index][TICKET_TIME_INDEX] == 2) {
 			printf("After4\t");
