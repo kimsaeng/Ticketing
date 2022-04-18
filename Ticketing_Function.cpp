@@ -232,6 +232,7 @@ void PrintOut(int repCount) {
       }
       
       printf(" X\t%d\t", QTY);
+      printf("%d\t", ticketInfo[index][PRICE_INDEX]);
 
       if(ticketInfo[index][SPECIAL_OFFER_INDEX] == 1) { 
          printf("None\n");
