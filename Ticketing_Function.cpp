@@ -11,7 +11,7 @@ const float DISABLED_DC_RATE = 0.5f, VETERAN_DC_RATE = 0.5f, MILITARY_DC_RATE = 
 const int TICKET_TYPE_INDEX = 0, TICKET_TIME_INDEX = 1, MANAGE_INDEX = 2, PRICE_INDEX = 3, SPECIAL_OFFER_INDEX = 4;
 int idNum[13];
 int ticketInfo[10][5] = {0};
-//function declatration
+//function declaration
 int TicketType();
 int TicketTime();
 int ManAge();
