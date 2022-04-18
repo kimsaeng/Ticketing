@@ -1,5 +1,5 @@
 #include <stdio.h>
-int ticketType, ticketTime, manAge, price, specialOffer, totalPrice = 0;
+int ticketType, ticketTime, manAge, price, priceSpecialOffer, specialOffer, totalPrice = 0;
 int index, repCount, newOrExit, continueOrNot, ridesOrNot = 0;
 int ageYear, birthDay = 0;
 const int QTY = 1;
@@ -11,7 +11,6 @@ const float DISABLED_DC_RATE = 0.5f, VETERAN_DC_RATE = 0.5f, MILITARY_DC_RATE = 
 const int TICKET_TYPE_INDEX = 0, TICKET_TIME_INDEX = 1, MANAGE_INDEX = 2, PRICE_INDEX = 3, SPECIAL_OFFER_INDEX = 4;
 int idNum[13];
 int ticketInfo[10][5] = {0};
-int priceSpecialOffer = 0;
 //function declatration
 int TicketType();
 int TicketTime();
