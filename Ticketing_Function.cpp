@@ -151,7 +151,6 @@ int SpecialOfferQuestion() {
 }
 
 int SpecialOffer(int manAge, int specialOffer, int price) {
-   //Special Offer
    if(manAge >= 65) {
       specialOffer = 1;
    }
